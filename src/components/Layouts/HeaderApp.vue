@@ -5,8 +5,8 @@
             <img src="../../../src/assets/images/logo.png" width="30" height="30" class="navbar-logo" alt="Logo">
         </router-link>
         <nav-item :title="'Trang chủ'" :routerName="'userHome'" class="navbar-brand"></nav-item>
-        <!-- <nav-item :title="'Sách'" :routerName="'books'" class="navbar-brand"></nav-item>
-        <nav-item :title="'Nhà xuất bản'" :routerName="'publishers'" class="navbar-brand"></nav-item>
+        <nav-item :title="'Sách'" :routerName="'books'" class="navbar-brand"></nav-item>
+        <!-- <nav-item :title="'Nhà xuất bản'" :routerName="'publishers'" class="navbar-brand"></nav-item>
         <nav-item :title="'Nhân viên'" :routerName="'employees'" class="navbar-brand"></nav-item> -->
         <!-- <nav-item :title="'Duyệt đơn mượn'" :routerName="'orderPage'" class="navbar-brand"></nav-item> -->
         <div class="btn-group dropdown">

@@ -4,6 +4,8 @@ import useAuthStore from "@/stores/auth.store.js";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
+import Book from "@/views/Book.vue";
+import BookDetail from "@/views/BookDetail.vue";
 
 import NotFound from "@/views/NotFound.vue";
 
@@ -30,6 +32,21 @@ const routes = [
                 path: "",
                 component: Home,
                 name: "userHome",
+            },
+            {
+                path: "books",
+                children: [
+                    {
+                        path: "",
+                        component: Book,
+                        name: "books",
+                    },
+                    {
+                        path: ":id",
+                        component: BookDetail,
+                        name: "bookDetail",
+                    }
+                ]
             },
             
         ],
