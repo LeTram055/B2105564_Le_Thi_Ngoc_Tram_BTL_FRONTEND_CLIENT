@@ -6,6 +6,7 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Book from "@/views/Book.vue";
 import BookDetail from "@/views/BookDetail.vue";
+import Cart from "@/views/Cart.vue";
 
 import NotFound from "@/views/NotFound.vue";
 
@@ -48,7 +49,15 @@ const routes = [
                     }
                 ]
             },
-            
+            {
+                path: "carts",
+                component: Cart,
+                name: "carts",
+                meta : {
+                    requiresAuth: true,
+                    role: "user",
+                },
+            },
         ],
     },
     
