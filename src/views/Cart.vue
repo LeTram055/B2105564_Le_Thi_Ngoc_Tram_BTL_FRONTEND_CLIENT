@@ -60,6 +60,7 @@ import { mapStores } from 'pinia';
 import authStore from '@/stores/auth.store';
 import bookService from '@/services/book.service';
 import CartItem from '@/components/Cart/CartItem.vue';
+import borrowTrackingService from '@/services/borrowTracking.service';
 
 export default {
     computed: {
@@ -171,7 +172,37 @@ export default {
             this.filter()
         },
         
-        
+        async borrowBook() {
+            
+            const totalPrice = this.calculateTotalPrice();
+            const cartIds = this.filterCarts.map(cart => cart._id);
+
+            const resCreateBorrowTracking = await borrowTrackingService.createBorrowTracking(cartIds, totalPrice);
+            
+            if (resCreateBorrowTracking.status == "success") {
+                await this.clearCart();
+                alert("Yêu cầu mượn sách thành công");
+                this.$router.push({ name: "users" });
+            } else {
+                alert("Yêu cầu mượn sách thất bại");
+            }
+        },
+
+        async clearCart() {
+        if (!this.authStore.getUser) {
+            console.warn("User is not authenticated.");
+            return;
+        }
+
+        // Gọi dịch vụ để xóa từng mục trong giỏ
+        for (const item of this.filterCarts) {
+            await cartService.deleteCart(this.authStore.getUser._id, item.bookId._id);
+        }
+
+        // Cập nhật lại giỏ hàng sau khi xóa
+        await this.getCarts();
+    }
+
     },
 }
 </script>
