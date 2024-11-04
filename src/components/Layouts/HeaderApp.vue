@@ -9,14 +9,13 @@
         <nav-item :title="'Giỏ hàng'" :routerName="'carts'" class="navbar-brand"></nav-item>
         <nav-item :title="'Mượn sách'" :routerName="'borrowTrackings'" class="navbar-brand"></nav-item>
         <nav-item :title="'Người dùng'" :routerName="'user'" class="navbar-brand"></nav-item>
-        <div class="btn-group dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-expanded="false">
+        <div class="ml-auto">
+            <button v-if="role === guestRole" class="btn btn-secondary login-btn" @click="login">
+                Đăng nhập
             </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <div v-if="role==guestRole" class="dropdown-item login-btn" @click="login">Đăng nhập</div>
-                <div v-if="role==userRole" class="dropdown-item logout-btn" @click="logout">Đăng xuất</div>
-            </div>
+            <button v-else-if="role === userRole" class="btn btn-secondary logout-btn" @click="logout">
+                Đăng xuất
+            </button>
         </div>
     </nav>
 </template>
@@ -65,9 +64,6 @@ export default {
     height: auto;
 }
 
-.dropdown {
-    margin-left: auto;
-}
 .login-btn:hover, .logout-btn:hover {
     cursor: pointer;
 }
