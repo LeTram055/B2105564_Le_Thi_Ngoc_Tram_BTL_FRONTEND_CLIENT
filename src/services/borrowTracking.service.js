@@ -15,7 +15,7 @@ class BorrowTrackingService {
             })).data
             return {
                 status: "success",
-                message: data.message || "BorrowTracking created successfully",
+                message: data.message || "Yêu cầu mượn sách đã được tạo thành công",
                 data: data.data,
             }
         } catch (err) {
@@ -28,10 +28,12 @@ class BorrowTrackingService {
 
     async getBorrowTracking(borrowId) {
         try {
+            
             const data = (await this.api.get(`/${borrowId}`)).data
+            
             return {
                 status: "success",
-                message: data.message || "BorrowTracking retrieved successfully",
+                message: data.message || "Theo dõi mượn sách đã được tìm thấy",
                 data: data.data,
             }
         } catch (err) {
@@ -47,7 +49,7 @@ class BorrowTrackingService {
             const data = (await this.api.put(`/user/${borrowId}`, {status})).data
             return {
                 status: "success",
-                message: data.message || "BorrowTracking updated successfully",
+                message: data.message || "Yêu cầu mượn sách đã được cập nhật thành công",
                 data: data.data,
             }
         } catch (err) {
@@ -63,13 +65,13 @@ class BorrowTrackingService {
             const data = (await this.api.get(`/user/${userId}`)).data
             return {
                 status: "success",
-                message: data.message || "BorrowTrackings retrieved successfully",
+                message: data.message || "Theo dõi mượn sách đã được tìm thấy",
                 data: data.data,
             }
         } catch (err) {
             return {
                 status: "error",
-                message: err.response.data.message,
+                message: err.response.data.message || "Lỗi ",
             }
         }
     }

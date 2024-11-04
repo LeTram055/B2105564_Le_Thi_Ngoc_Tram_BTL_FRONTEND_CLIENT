@@ -7,8 +7,11 @@ import Register from "@/views/Register.vue";
 import Book from "@/views/Book.vue";
 import BookDetail from "@/views/BookDetail.vue";
 import Cart from "@/views/Cart.vue";
+import BorrowTracking from "@/views/BorrowTracking.vue";
+import BorrowDetail from "@/views/BorrowDetail.vue";
 
 import NotFound from "@/views/NotFound.vue";
+
 
 const routes = [
     {
@@ -57,6 +60,25 @@ const routes = [
                     requiresAuth: true,
                     role: "user",
                 },
+            },
+            {
+                path: "borrowTrackings",
+                meta : {
+                    requiresAuth: true,
+                    role: "user",
+                },
+                children: [
+                    {
+                        path: "",
+                        component: BorrowTracking,
+                        name: "borrowTrackings",
+                    },
+                    {
+                        path: ":id",
+                        component: BorrowDetail,
+                        name: "borrowDetail",
+                    }
+                ]
             },
         ],
     },
