@@ -9,9 +9,9 @@ import BookDetail from "@/views/BookDetail.vue";
 import Cart from "@/views/Cart.vue";
 import BorrowTracking from "@/views/BorrowTracking.vue";
 import BorrowDetail from "@/views/BorrowDetail.vue";
+import User from "@/views/User.vue";
 
 import NotFound from "@/views/NotFound.vue";
-
 
 const routes = [
     {
@@ -80,6 +80,15 @@ const routes = [
                     }
                 ]
             },
+            {
+                path: "user",
+                component: User,
+                name: "user",
+                meta : {
+                    requiresAuth: true,
+                    role: "user",
+                },
+            }
         ],
     },
     
