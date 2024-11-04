@@ -37,10 +37,6 @@ export default {
     },
     methods: {
         async getUser() {
-            if (!this.authStore.getUser) {
-                console.warn("Người dùng chưa đăng nhập.");
-                return;
-            }
 
             const userId = this.authStore.getUser._id;
             const response = await userService.getUserById(userId);

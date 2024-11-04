@@ -10,7 +10,7 @@ class CartService {
             const data = (await this.api.get(`/${userId}`)).data
             return {
                 status: "success",
-                message: data.message || "Cart retrieved successfully",
+                message: data.message || "Giỏ hàng đã được tìm thấy",
                 data: data.data,
             }
         } catch (err) {
@@ -27,14 +27,14 @@ class CartService {
                 const data = (await this.api.get(`/cart/${cartId}`)).data
                 return {
                     status: "success",
-                    message: data.message || "Cart retrieved successfully",
+                    message: data.message || "Giỏ hàng đã được tìm thấy",
                     data: data.data,
                 }
             } else {
                 const data = (await this.api.get(`/${userId}/${bookId}`)).data
                 return {
                     status: "success",
-                    message: data.message || "Cart retrieved successfully",
+                    message: data.message || "Giỏ hàng đã được tìm thấy",
                     data: data.data,
                 }
             }
@@ -51,7 +51,7 @@ class CartService {
             const data = (await this.api.post(`/${userId}/${bookId}`, { quantity })).data
             return {
                 status: "success",
-                message: data.message || "Cart updated successfully",
+                message: data.message || "Giỏ hàng đã được cập nhật thành công",
                 data: data.data,
             }
         } catch (err) {
@@ -67,7 +67,7 @@ class CartService {
             const data = (await this.api.post(`/add-cart/${userId}/${bookId}`, { quantity })).data
             return {
                 status: "success",
-                message: data.message || "Book added to cart successfully",
+                message: data.message || "Sách đã được thêm vào giỏ hàng thành công",
                 data: data.data,
             }
         } catch (err) {
@@ -83,7 +83,7 @@ class CartService {
             const data = (await this.api.delete(`/${userId}/${bookId}`)).data
             return {
                 status: "success",
-                message: data.message || "Book removed from cart successfully",
+                message: data.message || "Sách đã được xóa khỏi giỏ hàng thành công",
                 data: data.data,
             }
         } catch (err) {

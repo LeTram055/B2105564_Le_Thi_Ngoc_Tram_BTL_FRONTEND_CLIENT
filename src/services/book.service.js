@@ -10,7 +10,7 @@ class BookService {
             const data = (await this.api.get("/")).data
             return {
                 status: "success",
-                message: data.message || "Books retrieved successfully",
+                message: data.message || "Sách đã được tìm thấy",
                 data: data.data,
             }
         } catch (err) {
@@ -26,7 +26,7 @@ class BookService {
             const data = (await this.api.get(`/${id}`)).data
             return {
                 status: "success",
-                message: data.message || "Book retrieved successfully",
+                message: data.message || "Sách đã được tìm thấy",
                 data: data.data,
             }
         } catch (err) {

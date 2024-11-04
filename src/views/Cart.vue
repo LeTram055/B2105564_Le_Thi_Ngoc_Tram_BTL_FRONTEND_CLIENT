@@ -114,10 +114,6 @@ export default {
                 });
         },
         async getCarts() {
-            if (!this.authStore.getUser) {
-                console.warn("User is not authenticated.");
-                return;
-            }
 
             const res = await cartService.getCarts(this.authStore.getUser._id);
             if (res.status == "error") {
@@ -189,11 +185,6 @@ export default {
         },
 
         async clearCart() {
-        if (!this.authStore.getUser) {
-            console.warn("User is not authenticated.");
-            return;
-        }
-
         // Gọi dịch vụ để xóa từng mục trong giỏ
         for (const item of this.filterCarts) {
             await cartService.deleteCart(this.authStore.getUser._id, item.bookId._id);
