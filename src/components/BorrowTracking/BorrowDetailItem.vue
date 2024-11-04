@@ -50,7 +50,7 @@ export default {
             BASE_URL: import.meta.env.VITE_APP_BASE_URL // Truy cập biến môi trường
         }
     },
-    emits: ['delete', 'showDetail', 'incrementQuantity', 'decrementQuantity'],
+    emits: ['showDetail'],
     methods: {
         formatCurrency(amount) {
             return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
