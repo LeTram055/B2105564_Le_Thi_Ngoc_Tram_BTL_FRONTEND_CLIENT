@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <register :isRegister="isRegister" :titleForm="titleForm" @submit="handleSubmit"></register>
-        <div class="mt-3 text-center">
+        <div class="my-4 text-center">
             Bạn đã có tài khoản?
             <router-link :to="{name: 'login'}">Đăng nhập ngay</router-link>
         </div>
@@ -36,6 +36,6 @@ export default {
 
 <style scoped>
 .container {
-    max-width: 400px;
+    max-width: 600px;
 }
 </style>
