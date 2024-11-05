@@ -84,7 +84,7 @@ export default {
             });
         },
         async addCart(book) {
-            if (!this.authStore.getUser) {
+            if (this.authStore.getRole == "guest") {
                 alert("Vui lòng đăng nhập để thêm sách vào giỏ hàng")
                 return
             }

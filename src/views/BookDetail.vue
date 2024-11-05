@@ -58,11 +58,8 @@ export default {
     },
     methods: {
         async addCart() {
-            if (!this.authStore.getUser) {
+            if (this.authStore.getRole == "guest") {
                 alert("Vui lòng đăng nhập để thêm sách vào giỏ hàng")
-                // this.$router.push({
-                //     name: "login",
-                // })
                 return
             }
             
