@@ -7,7 +7,7 @@
             <p class="book-quantity text-size-12">Số lượng còn lại: {{ book?.quantity }}</p>
         </div>
 
-        <btn :nameBtn="'Thêm giỏ hàng'" @submit="addCart" :styleBtn="'btn-success btn-add'"></btn>
+        <btn :nameBtn="'Thêm giỏ hàng'" @submit="addCart" :styleBtn="'btn-add'"></btn>
     </div>
 </template>
 

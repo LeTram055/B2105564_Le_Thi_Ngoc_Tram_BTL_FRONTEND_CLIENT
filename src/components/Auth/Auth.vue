@@ -34,7 +34,7 @@
         <!-- Trường Mật khẩu, luôn được hiển thị -->
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" v-model="password">
+            <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" v-model="password" required>
         </div>
 
         <div v-if="isRegister" class="from-check form-check-inline">

@@ -107,7 +107,7 @@ export default {
             });
         },
         async handleCancel(borrow) {
-            if (window.confirm("Bạn có chắc chắn yêu cầu hủy đơn hàng này")) {
+            if (window.confirm("Bạn có chắc chắn yêu cầu hủy mượn sách này")) {
                 const res = await borrowService.updateBorrowTracking({
                     borrowId: borrow._id,
                     status: "Đã hủy",
