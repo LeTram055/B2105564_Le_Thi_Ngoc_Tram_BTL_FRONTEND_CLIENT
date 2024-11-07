@@ -6,7 +6,9 @@
         <div class="row my-3 justify-content-center">
             <user-detail :user="user"></user-detail>
         </div>
-        
+        <div class="row my-3 justify-content-center">
+            <btn name-btn="Đổi mật khẩu" @click="changePassword"></btn>
+        </div>
         
     </div>
 </template>
@@ -17,6 +19,7 @@ import UserDetail from '@/components/User/UserDetail.vue';
 import userService from '@/services/user.service.js';
 import { mapStores } from 'pinia';
 import authStore from '@/stores/auth.store';
+import Btn from '@/components/Layouts/Btn.vue';
 
 export default {
     computed: {
@@ -31,6 +34,7 @@ export default {
     components: {
         Greeting,
         UserDetail,
+        Btn,
     },
     beforeMount() {
         this.getUser();
@@ -49,7 +53,10 @@ export default {
         },
         formatDate(date) {
             return new Date(date).toLocaleDateString(); // Định dạng ngày tháng
-        }
+        },
+        changePassword() {
+            this.$router.push({ name: 'changePassword' });
+        },
     }
 };
 </script>

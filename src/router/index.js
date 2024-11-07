@@ -10,6 +10,7 @@ import Cart from "@/views/Cart.vue";
 import BorrowTracking from "@/views/BorrowTracking.vue";
 import BorrowDetail from "@/views/BorrowDetail.vue";
 import User from "@/views/User.vue";
+import ChangePassword from "@/views/ChangePassword.vue";
 
 import NotFound from "@/views/NotFound.vue";
 
@@ -36,6 +37,15 @@ const routes = [
                 path: "",
                 component: Home,
                 name: "userHome",
+            },
+            {
+                path: "change-password",
+                component: ChangePassword,
+                name: "changePassword",
+                meta : {
+                    requiresAuth: true,
+                    role: "user",
+                },
             },
             {
                 path: "books",
