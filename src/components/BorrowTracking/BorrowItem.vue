@@ -3,7 +3,7 @@
         <td class="text-center"> {{ formatDateTime(borrow.requestDate) }} </td>
         <td class="text-right"> {{ formatCurrency(borrow.price) }} đồng </td>
         <td class="text-center"> {{ formatDateTime(borrow.borrowDate) }} </td>
-        <td class="text-center"> {{ formatDateTime(borrow.expextedReturnDate) }} </td>
+        <td class="text-center"> {{ formatDateTime(borrow.expectedReturnDate) }} </td>
         <td class="text-center"> {{ formatDateTime(borrow.actualReturnDate) }} </td>
         <td class="text-center"> {{ borrow.status }} </td>
         <td class="func">
