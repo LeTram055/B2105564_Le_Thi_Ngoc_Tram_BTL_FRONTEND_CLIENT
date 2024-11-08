@@ -55,16 +55,16 @@ export default {
                 name: "borrowTrackings",
             });
         }
-        
+
         this.borrowTrackingItems = res.data.borrowDetails;
         
     },
     methods: {
-        handleShowDetail(book) {
+        handleShowDetail(bookId) {
             this.$router.push({
                 name: "bookDetail",
                 params: {
-                    id: book._id,
+                    id: bookId
                 },
             });
         },

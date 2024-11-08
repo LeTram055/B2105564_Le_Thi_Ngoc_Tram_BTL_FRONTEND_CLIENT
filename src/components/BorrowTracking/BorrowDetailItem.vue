@@ -28,8 +28,7 @@
 </template>
 
 <script>
-import Btn from "@/components/Layouts/Btn.vue"
-import CountBtn from '../Layouts/QuantityBtn.vue';
+import Btn from "@/components/Layouts/Btn.vue";
 
 export default {
     props: {
@@ -40,16 +39,15 @@ export default {
     },
     components: {
         Btn,
-        CountBtn,
         
     },
     data() {
-        console.log(import.meta.env.VITE_APP_BASE_URL);
         return {
             
             BASE_URL: import.meta.env.VITE_APP_BASE_URL // Truy cập biến môi trường
         }
     },
+    
     emits: ['showDetail'],
     methods: {
         formatCurrency(amount) {
@@ -57,7 +55,7 @@ export default {
         },
         
         handleShowDetail() {
-            this.$emit('showDetail', this.borrowDetail.bookId);
+            this.$emit('showDetail', this.borrowDetail.bookId._id);
         },
 
     }
