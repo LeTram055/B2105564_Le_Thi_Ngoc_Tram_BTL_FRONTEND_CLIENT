@@ -47,7 +47,7 @@ export default {
         return {
             borrows: [],
             filterBorrows: [],
-            title: 'Đơn hàng',
+            title: 'Đơn mượn sách',
             searchBy: "Tìm kiếm theo trạng thái đơn hàng, ngày mượn, ngày trả",
             searchTerm: "",
         };
